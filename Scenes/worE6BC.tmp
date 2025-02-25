@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://t5bradfhe82h"]
+
+[ext_resource type="Texture2D" uid="uid://c262qkivrwwki" path="res://assets/bck.png" id="2_p5ic8"]
+[ext_resource type="PackedScene" uid="uid://bqwkwp0u45j6n" path="res://Scenes/player_3_0.tscn" id="3_1t8uv"]
+[ext_resource type="PackedScene" uid="uid://cdv8n3ihw077p" path="res://Scenes/platform_2_0.tscn" id="3_kkxc5"]
+
+[node name="World" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(560, 800)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = -494.0
+offset_top = -614.0
+offset_right = 436.0
+offset_bottom = 342.0
+texture = ExtResource("2_p5ic8")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Platform 2_0" parent="." instance=ExtResource("3_kkxc5")]
+position = Vector2(4, 148)
+
+[node name="Player3_0" parent="." instance=ExtResource("3_1t8uv")]

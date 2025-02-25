@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://t5bradfhe82h"]
+
+[ext_resource type="PackedScene" uid="uid://6rp6ysc4c4s8" path="res://Scenes/blue_platform.tscn" id="1_eolok"]
+[ext_resource type="Texture2D" uid="uid://c262qkivrwwki" path="res://assets/bck.png" id="2_p5ic8"]
+[ext_resource type="PackedScene" uid="uid://bqwkwp0u45j6n" path="res://Scenes/player_3_0.tscn" id="3_1t8uv"]
+[ext_resource type="PackedScene" uid="uid://cdv8n3ihw077p" path="res://Scenes/platform_2_0.tscn" id="3_kkxc5"]
+[ext_resource type="PackedScene" uid="uid://cnoh6jojxgi6r" path="res://Scenes/red_platform.tscn" id="4_glhik"]
+[ext_resource type="PackedScene" uid="uid://sulsqlyic225" path="res://Scenes/green_platform.tscn" id="6_awqdd"]
+[ext_resource type="PackedScene" uid="uid://c6euujue4h3y" path="res://Scenes/orange_platform.tscn" id="7_d31sg"]
+
+[node name="World" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(560, 800)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = -494.0
+offset_top = -614.0
+offset_right = 436.0
+offset_bottom = 342.0
+texture = ExtResource("2_p5ic8")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Platform 2_0" parent="." instance=ExtResource("3_kkxc5")]
+position = Vector2(4, 148)
+
+[node name="Player3_0" parent="." instance=ExtResource("3_1t8uv")]
+position = Vector2(3, -165)
+
+[node name="blue_platform" parent="." instance=ExtResource("1_eolok")]
+position = Vector2(-164, -296)
+
+[node name="green_platform" parent="." instance=ExtResource("6_awqdd")]
+position = Vector2(29, -1)
+
+[node name="orange_Platform" parent="." instance=ExtResource("7_d31sg")]
+position = Vector2(130, -117)
+
+[node name="Red_Platform" parent="." instance=ExtResource("4_glhik")]
+position = Vector2(-190, 20)
