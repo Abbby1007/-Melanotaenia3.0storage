@@ -24,22 +24,23 @@ texture = ExtResource("2_p5ic8")
 expand_mode = 1
 stretch_mode = 1
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="Platform 2_0" parent="." instance=ExtResource("3_kkxc5")]
-position = Vector2(4, 148)
+position = Vector2(-69, 202)
 
 [node name="Player3_0" parent="." instance=ExtResource("3_1t8uv")]
-position = Vector2(3, -165)
+position = Vector2(-144, -156)
+
+[node name="Camera2D" type="Camera2D" parent="Player3_0"]
+position = Vector2(144, 156)
 
 [node name="blue_platform" parent="." instance=ExtResource("1_eolok")]
-position = Vector2(-164, -296)
+position = Vector2(-209, 96)
 
 [node name="green_platform" parent="." instance=ExtResource("6_awqdd")]
-position = Vector2(29, -1)
+position = Vector2(165, 54)
 
 [node name="orange_Platform" parent="." instance=ExtResource("7_d31sg")]
-position = Vector2(130, -117)
+position = Vector2(326, 30)
 
 [node name="Red_Platform" parent="." instance=ExtResource("4_glhik")]
-position = Vector2(-190, 20)
+position = Vector2(-17, 106)

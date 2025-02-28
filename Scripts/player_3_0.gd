@@ -28,15 +28,29 @@ func _process(delta):
 	if right_key:
 		set_linear_velocity(Vector2(+speed, get_linear_velocity().y))
 
+	#Change to red
+	if Input.is_action_just_pressed("red"):
+		player_3_0.modulate = Color(1, 0, 0, 1)
+	#Change to blue
+	if Input.is_action_just_pressed("blue"):
+		player_3_0.modulate = Color(0, 0, 1, 1)
+		
+		#Change to green
+	if Input.is_action_just_pressed("green"):
+		player_3_0.modulate = Color(0, 0.502, 0, 1)
+	#Change to orange
+	if Input.is_action_just_pressed("orange"):
+		player_3_0.modulate = Color(1, 0.4, 0, 1)
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("platform2_0"):
 		print("collided")
 		set_linear_velocity(Vector2(0,-jump_speed))
+
 		
 	# CHECKS TO SEEEEE WHAT PLATFORM THE PLAYER IS TOUCHING --------------------------------------------------
 #What happens if the player is on the red platform
-	if area.get_parent().is_in_group("red_platform"):
+	if area.is_in_group("red_platform"):
 		print("Red collide")
 		print(" ")
 		is_red = true
@@ -48,12 +62,12 @@ func _on_area_2d_area_entered(area):
 			print("Player is Red and the platform is Red")
 			print(" ")		
 		if(modulate != Color(1, 0, 0, 1)):
-			print(" The player is not red")
-		#get_tree().reload_current_scene()
+			print("The player is not red")
+		##get_tree().reload_current_scene()
 			
 #-------------------------------------------------------------------------------
-#What happens if the player is on the blue platform
-	if area.get_parent().is_in_group("blue_platform"):
+##What happens if the player is on the blue platform
+	if area.is_in_group("blue_platform"):
 		print("Blue collide")
 		print(" ")
 		is_red = false
@@ -69,11 +83,11 @@ func _on_area_2d_area_entered(area):
 			print("The player is not blue")
 			#get_tree().reload_current_scene()
 			
-	#W-------------------------------------------------
+	##W-------------------------------------------------
 	
 	
-	#What happens if the player is on the green platform
-	if area.get_parent().is_in_group("green_platform"):
+	##What happens if the player is on the green platform
+	if area.is_in_group("green_platform"):
 		print("Green collide")
 		print(" ")
 		is_red = false
@@ -88,10 +102,10 @@ func _on_area_2d_area_entered(area):
 			print("The player is not green")
 			#get_tree().reload_current_scene()
 			
-	#--------------------------------------------------
-	
-		#What happens if the player is on the orange platform
-	if area.get_parent().is_in_group("orange_platform"):
+	##--------------------------------------------------
+	#
+		##What happens if the player is on the orange platform
+	if area.is_in_group("orange_platform"):
 		print("Orange collide")
 		print(" ")
 		is_red = false
@@ -104,9 +118,9 @@ func _on_area_2d_area_entered(area):
 			
 		if(modulate != Color(1, 0.4, 0, 1)):
 			print("The player is not orange")
-			#get_tree().reload_current_scene()
-			
-	#--------------------------------------------------
+			##get_tree().reload_current_scene()
+			#
+	##--------------------------------------------------
 	
 		
 		
