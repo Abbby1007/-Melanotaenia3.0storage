@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://81o6evj7k3u"]
+
+[ext_resource type="Texture2D" uid="uid://c262qkivrwwki" path="res://assets/bck.png" id="1_0p2rs"]
+[ext_resource type="PackedScene" uid="uid://cdv8n3ihw077p" path="res://Scenes/platform_2_0.tscn" id="2_kptyp"]
+[ext_resource type="PackedScene" uid="uid://bqwkwp0u45j6n" path="res://Scenes/player_3_0.tscn" id="3_64x60"]
+[ext_resource type="PackedScene" uid="uid://cyxwnlyihmsg0" path="res://Scenes/tutorial_red_platform.tscn" id="4_myken"]
+[ext_resource type="PackedScene" uid="uid://bmnsllljcg1j1" path="res://Scenes/tutorial_blue_platform.tscn" id="5_gon2q"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_i1ype"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wiewd"]
+
+[node name="tutorialTwo" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(560, 800)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = -494.0
+offset_top = -614.0
+offset_right = 436.0
+offset_bottom = 342.0
+texture = ExtResource("1_0p2rs")
+expand_mode = 1
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Platform 2_0" parent="." instance=ExtResource("2_kptyp")]
+position = Vector2(8, 387)
+scale = Vector2(-4, 0.061)
+
+[node name="Player3_0" parent="." instance=ExtResource("3_64x60")]
+position = Vector2(-144, -156)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-256, 105)
+rotation = 1.5708
+scale = Vector2(3, 1)
+shape = SubResource("WorldBoundaryShape2D_i1ype")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(268, 105)
+rotation = 1.5708
+scale = Vector2(3, 1)
+shape = SubResource("WorldBoundaryShape2D_wiewd")
+
+[node name="tutorialRedPlatform" parent="." instance=ExtResource("4_myken")]
+position = Vector2(-15, 286)
+
+[node name="tutorialBluePlatform" parent="." instance=ExtResource("5_gon2q")]
+position = Vector2(-10, 139)
+
+[node name="Camera2D" type="Camera2D" parent="."]

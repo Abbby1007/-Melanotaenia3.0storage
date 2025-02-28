@@ -23,6 +23,7 @@ offset_bottom = 342.0
 texture = ExtResource("2_p5ic8")
 expand_mode = 1
 stretch_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Platform 2_0" parent="." instance=ExtResource("3_kkxc5")]
 position = Vector2(-69, 202)
