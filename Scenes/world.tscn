@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c6euujue4h3y" path="res://Scenes/orange_platform.tscn" id="7_d31sg"]
 
 [node name="World" type="Node2D"]
+position = Vector2(28, 236)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

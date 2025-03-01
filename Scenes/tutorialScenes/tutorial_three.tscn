@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://dm4vntfoev4at"]
+
+[ext_resource type="Texture2D" uid="uid://c262qkivrwwki" path="res://assets/bck.png" id="1_ys6cl"]
+[ext_resource type="PackedScene" uid="uid://bqwkwp0u45j6n" path="res://Scenes/player_3_0.tscn" id="2_38jqr"]
+[ext_resource type="PackedScene" uid="uid://cnoh6jojxgi6r" path="res://Scenes/red_platform.tscn" id="3_1yhdx"]
+[ext_resource type="PackedScene" uid="uid://6rp6ysc4c4s8" path="res://Scenes/blue_platform.tscn" id="4_1k51a"]
+[ext_resource type="PackedScene" uid="uid://btgn1rfp60thy" path="res://Scenes/basic_platofrm.tscn" id="5_bhqkn"]
+[ext_resource type="PackedScene" uid="uid://b1e0jjn1q6gg4" path="res://Scenes/tutorialScenes/tutorila_basic_platform.tscn" id="5_ucseg"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8k4f7"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_obiuj"]
+
+[node name="tutorialThree" type="Node2D"]
+
+[node name="Player3_0" parent="." instance=ExtResource("2_38jqr")]
+position = Vector2(-144, -156)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-256, 105)
+rotation = 1.5708
+scale = Vector2(3, 1)
+shape = SubResource("WorldBoundaryShape2D_8k4f7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(268, 105)
+rotation = 1.5708
+scale = Vector2(3, 1)
+shape = SubResource("WorldBoundaryShape2D_obiuj")
+
+[node name="Red_Platform" parent="." instance=ExtResource("3_1yhdx")]
+position = Vector2(-17, 303)
+
+[node name="blue_platform" parent="." instance=ExtResource("4_1k51a")]
+position = Vector2(-15, 206)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="BasicPlatofrm" parent="." instance=ExtResource("5_bhqkn")]
+position = Vector2(140, 387)
+scale = Vector2(-2, 0.061)
+
+[node name="tutorilaBasicPlatform" parent="." instance=ExtResource("5_ucseg")]
+position = Vector2(-131, 370)
+scale = Vector2(-2.15, 0.061)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(560, 800)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = -494.0
+offset_top = -614.0
+offset_right = 436.0
+offset_bottom = 342.0
+texture = ExtResource("1_ys6cl")
+expand_mode = 1
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true

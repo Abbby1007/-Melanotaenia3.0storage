@@ -126,14 +126,14 @@ func _on_area_2d_area_entered(area):
 		
 			#TUOTIRAL PLATFROMSSSSSSSSSS ________________________________________________________________________________
 	# for tutorial Level one
-	if area.get_parent().is_in_group("tutorialRedPlatform"):
+	if area.is_in_group("tutorialRedPlatform"):
 		print("TELEPORT")
-		get_tree().change_scene_to_file("res://Scenes/tutorial_two.tscn")
+		get_tree().change_scene_to_file("res://Scenes/tutorialScenes/tutorial_two.tscn")
 	#---------------------------------------------------------------
 	
 	#For tutorial Level two
-	if area.get_parent().is_in_group("tutorialBluePlatform"):
-		get_tree().change_scene_to_file("res://Scenes/tutorial_three.tscn")
+	if area.is_in_group("tutorialBluePlatform"):
+		get_tree().change_scene_to_file("res://Scenes/tutorialScenes/tutorial_three.tscn")
 	#------------------------------------------------------
 	
 	##Change it to have the player be teleported to the Main Menu or Level 1

@@ -17,8 +17,9 @@ scale = Vector2(0.8, 0.3)
 position = Vector2(24.5, 43)
 scale = Vector2(22.625, 1)
 shape = SubResource("RectangleShape2D_m6tkd")
+one_way_collision = true
 
-[node name="Area2D" type="Area2D" parent="." groups=["red_platform", "tutorialRedPlatform"]]
+[node name="Area2D" type="Area2D" parent="." groups=["tutorialRedPlatform"]]
 
 [node name="AreaCollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(26.5, 42)

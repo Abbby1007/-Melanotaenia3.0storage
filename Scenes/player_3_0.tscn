@@ -10,6 +10,7 @@ size = Vector2(39.1667, 8.5)
 size = Vector2(38, 39)
 
 [node name="Player3_0" type="RigidBody2D"]
+lock_rotation = true
 script = ExtResource("1_v4cko")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
