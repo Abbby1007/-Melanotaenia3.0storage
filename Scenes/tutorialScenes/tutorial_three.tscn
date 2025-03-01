@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://dm4vntfoev4at"]
+[gd_scene load_steps=10 format=3 uid="uid://dm4vntfoev4at"]
 
+[ext_resource type="Script" path="res://Scenes/tutorialScenes/tutorial_three.gd" id="1_md0j0"]
 [ext_resource type="Texture2D" uid="uid://c262qkivrwwki" path="res://assets/bck.png" id="1_ys6cl"]
 [ext_resource type="PackedScene" uid="uid://bqwkwp0u45j6n" path="res://Scenes/player_3_0.tscn" id="2_38jqr"]
 [ext_resource type="PackedScene" uid="uid://cnoh6jojxgi6r" path="res://Scenes/red_platform.tscn" id="3_1yhdx"]
@@ -13,9 +14,26 @@ distance = -271.0
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3f4h7"]
 
 [node name="tutorialThree" type="Node2D"]
+script = ExtResource("1_md0j0")
 
 [node name="Player3_0" parent="." instance=ExtResource("2_38jqr")]
 position = Vector2(-187, 210)
+
+[node name="S key for Red" type="Label" parent="Player3_0"]
+modulate = Color(1, 0, 0, 1)
+offset_left = -43.0
+offset_top = -39.0
+offset_right = -3.0
+offset_bottom = -16.0
+text = "S"
+
+[node name="W key for Blue" type="Label" parent="Player3_0"]
+modulate = Color(0, 0, 1, 1)
+offset_left = 25.0
+offset_top = -39.0
+offset_right = 65.0
+offset_bottom = -16.0
+text = "W"
 
 [node name="Red_Platform" parent="." instance=ExtResource("3_1yhdx")]
 position = Vector2(140, 230)

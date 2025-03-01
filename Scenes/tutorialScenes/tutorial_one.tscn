@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dxaspkonsbend"]
+[gd_scene load_steps=10 format=3 uid="uid://dxaspkonsbend"]
 
 [ext_resource type="Texture2D" uid="uid://c262qkivrwwki" path="res://assets/bck.png" id="1_wbfgb"]
 [ext_resource type="PackedScene" uid="uid://bqwkwp0u45j6n" path="res://Scenes/player_3_0.tscn" id="3_ntktu"]
@@ -7,12 +7,29 @@
 [ext_resource type="PackedScene" uid="uid://btgn1rfp60thy" path="res://Scenes/basic_platofrm.tscn" id="5_cisvd"]
 [ext_resource type="PackedScene" uid="uid://6rp6ysc4c4s8" path="res://Scenes/blue_platform.tscn" id="6_kahu1"]
 
+[sub_resource type="GDScript" id="GDScript_38fh2"]
+script/source = "extends Node2D
+
+@onready var player_3_0 = $Player3_0
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if Input.is_action_just_pressed(\"red\"):
+		player_3_0.modulate = Color(1, 0, 0, 1)
+"
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tfx0d"]
 distance = -271.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_l3s4w"]
 
 [node name="Tutorial One" type="Node2D"]
+script = SubResource("GDScript_38fh2")
 
 [node name="Player3_0" parent="." instance=ExtResource("3_ntktu")]
 position = Vector2(-187, 210)

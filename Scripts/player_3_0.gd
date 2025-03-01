@@ -28,19 +28,19 @@ func _process(delta):
 	if right_key:
 		set_linear_velocity(Vector2(+speed, get_linear_velocity().y))
 
-	#Change to red
-	if Input.is_action_just_pressed("red"):
-		player_3_0.modulate = Color(1, 0, 0, 1)
-	#Change to blue
-	if Input.is_action_just_pressed("blue"):
-		player_3_0.modulate = Color(0, 0, 1, 1)
-		
-		#Change to green
-	if Input.is_action_just_pressed("green"):
-		player_3_0.modulate = Color(0, 0.502, 0, 1)
-	#Change to orange
-	if Input.is_action_just_pressed("orange"):
-		player_3_0.modulate = Color(1, 0.4, 0, 1)
+	##Change to red
+	#if Input.is_action_just_pressed("red"):
+		#player_3_0.modulate = Color(1, 0, 0, 1)
+	##Change to blue
+	#if Input.is_action_just_pressed("blue"):
+		#player_3_0.modulate = Color(0, 0, 1, 1)
+		#
+		##Change to green
+	#if Input.is_action_just_pressed("green"):
+		#player_3_0.modulate = Color(0, 0.502, 0, 1)
+	##Change to orange
+	#if Input.is_action_just_pressed("orange"):
+		#player_3_0.modulate = Color(1, 0.4, 0, 1)
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("platform2_0"):
