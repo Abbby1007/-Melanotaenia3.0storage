@@ -63,7 +63,7 @@ func _on_area_2d_area_entered(area):
 			print(" ")		
 		if(modulate != Color(1, 0, 0, 1)):
 			print("The player is not red")
-		##get_tree().reload_current_scene()
+			get_tree().reload_current_scene()
 			
 #-------------------------------------------------------------------------------
 ##What happens if the player is on the blue platform
@@ -81,7 +81,7 @@ func _on_area_2d_area_entered(area):
 			
 		if(modulate != Color(0, 0, 1, 1)):
 			print("The player is not blue")
-			#get_tree().reload_current_scene()
+			get_tree().reload_current_scene()
 			
 	##W-------------------------------------------------
 	
@@ -100,7 +100,7 @@ func _on_area_2d_area_entered(area):
 			
 		if(modulate != Color(0, 0.502, 0, 1)):
 			print("The player is not green")
-			#get_tree().reload_current_scene()
+			get_tree().reload_current_scene()
 			
 	##--------------------------------------------------
 	#
@@ -118,7 +118,7 @@ func _on_area_2d_area_entered(area):
 			
 		if(modulate != Color(1, 0.4, 0, 1)):
 			print("The player is not orange")
-			##get_tree().reload_current_scene()
+			get_tree().reload_current_scene()
 			#
 	##--------------------------------------------------
 	

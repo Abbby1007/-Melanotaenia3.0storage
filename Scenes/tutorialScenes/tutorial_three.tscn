@@ -7,32 +7,21 @@
 [ext_resource type="PackedScene" uid="uid://btgn1rfp60thy" path="res://Scenes/basic_platofrm.tscn" id="5_bhqkn"]
 [ext_resource type="PackedScene" uid="uid://b1e0jjn1q6gg4" path="res://Scenes/tutorialScenes/tutorila_basic_platform.tscn" id="5_ucseg"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8k4f7"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_li4jf"]
+distance = -271.0
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_obiuj"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3f4h7"]
 
 [node name="tutorialThree" type="Node2D"]
 
 [node name="Player3_0" parent="." instance=ExtResource("2_38jqr")]
-position = Vector2(-144, -156)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-256, 105)
-rotation = 1.5708
-scale = Vector2(3, 1)
-shape = SubResource("WorldBoundaryShape2D_8k4f7")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(268, 105)
-rotation = 1.5708
-scale = Vector2(3, 1)
-shape = SubResource("WorldBoundaryShape2D_obiuj")
+position = Vector2(-187, 210)
 
 [node name="Red_Platform" parent="." instance=ExtResource("3_1yhdx")]
-position = Vector2(-17, 303)
+position = Vector2(140, 230)
 
 [node name="blue_platform" parent="." instance=ExtResource("4_1k51a")]
-position = Vector2(-15, 206)
+position = Vector2(-100, 90)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -58,3 +47,19 @@ texture = ExtResource("1_ys6cl")
 expand_mode = 1
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3, 0)
+rotation = 1.5708
+scale = Vector2(4.6, 1)
+shape = SubResource("WorldBoundaryShape2D_li4jf")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(267, 0)
+rotation = -1.5708
+scale = Vector2(4.6, 1)
+shape = SubResource("WorldBoundaryShape2D_3f4h7")

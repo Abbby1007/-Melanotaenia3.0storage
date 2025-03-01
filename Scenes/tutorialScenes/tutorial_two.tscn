@@ -7,9 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://b1e0jjn1q6gg4" path="res://Scenes/tutorialScenes/tutorila_basic_platform.tscn" id="5_lp7tg"]
 [ext_resource type="PackedScene" uid="uid://cnoh6jojxgi6r" path="res://Scenes/red_platform.tscn" id="6_52d8u"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_i1ype"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_f30tx"]
+distance = -271.0
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wiewd"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jjbsv"]
 
 [node name="tutorialTwo" type="Node2D"]
 
@@ -31,20 +32,8 @@ metadata/_edit_use_anchors_ = true
 [node name="Player3_0" parent="." instance=ExtResource("2_plleh")]
 position = Vector2(-187, 210)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-256, 105)
-rotation = 1.5708
-scale = Vector2(3, 1)
-shape = SubResource("WorldBoundaryShape2D_i1ype")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(268, 105)
-rotation = 1.5708
-scale = Vector2(3, 1)
-shape = SubResource("WorldBoundaryShape2D_wiewd")
-
 [node name="tutorialBluePlatform" parent="." instance=ExtResource("4_0qqju")]
-position = Vector2(140, 90)
+position = Vector2(-100, 90)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -58,3 +47,19 @@ scale = Vector2(-2.15, 0.061)
 
 [node name="Red_Platform" parent="." instance=ExtResource("6_52d8u")]
 position = Vector2(140, 230)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3, 0)
+rotation = 1.5708
+scale = Vector2(4.6, 1)
+shape = SubResource("WorldBoundaryShape2D_f30tx")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(267, 0)
+rotation = -1.5708
+scale = Vector2(4.6, 1)
+shape = SubResource("WorldBoundaryShape2D_jjbsv")

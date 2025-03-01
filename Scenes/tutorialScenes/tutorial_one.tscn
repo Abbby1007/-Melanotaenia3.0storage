@@ -7,26 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://btgn1rfp60thy" path="res://Scenes/basic_platofrm.tscn" id="5_cisvd"]
 [ext_resource type="PackedScene" uid="uid://6rp6ysc4c4s8" path="res://Scenes/blue_platform.tscn" id="6_kahu1"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ftbct"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tfx0d"]
+distance = -271.0
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_s37c7"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_l3s4w"]
 
 [node name="Tutorial One" type="Node2D"]
 
 [node name="Player3_0" parent="." instance=ExtResource("3_ntktu")]
 position = Vector2(-187, 210)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-256, 105)
-rotation = 1.5708
-scale = Vector2(3, 1)
-shape = SubResource("WorldBoundaryShape2D_ftbct")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(268, 105)
-rotation = 1.5708
-scale = Vector2(3, 1)
-shape = SubResource("WorldBoundaryShape2D_s37c7")
 
 [node name="tutorialRedPlatform" parent="." instance=ExtResource("4_ocnbd")]
 position = Vector2(140, 230)
@@ -57,4 +46,20 @@ stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="blue_platform" parent="." instance=ExtResource("6_kahu1")]
-position = Vector2(140, 90)
+position = Vector2(-100, 90)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3, 0)
+rotation = 1.5708
+scale = Vector2(4.6, 1)
+shape = SubResource("WorldBoundaryShape2D_tfx0d")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(267, 0)
+rotation = -1.5708
+scale = Vector2(4.6, 1)
+shape = SubResource("WorldBoundaryShape2D_l3s4w")
